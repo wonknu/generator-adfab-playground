@@ -1,4 +1,4 @@
-# generator-generator-adfab-playground [![Build Status](https://secure.travis-ci.org/wonknu/generator-generator-adfab-playground.png?branch=master)](https://travis-ci.org/wonknu/generator-generator-adfab-playground)
+# generator-adfab-playground [![Build Status](https://secure.travis-ci.org/wonknu/generator-adfab-playground.png?branch=master)](https://travis-ci.org/wonknu/generator-generator-adfab-playground)
 
 > [Yeoman](http://yeoman.io) generator
 
@@ -23,10 +23,10 @@ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-generator-adfab-playground from npm, run:
+To install generator-adfab-playground from npm, run:
 
 ```bash
-npm install -g generator-generator-adfab-playground
+npm install -g generator-adfab-playground
 ```
 
 Finally, initiate the generator:
