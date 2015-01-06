@@ -1,5 +1,4 @@
 # generator-adfab-playground
-https://travis-ci.org/wonknu/generator-generator-adfab-playground)
 
 > [Yeoman](http://yeoman.io) generator
 
