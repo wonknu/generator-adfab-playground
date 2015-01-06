@@ -49,24 +49,18 @@ module.exports = function(grunt) {
             ],
           },
         },
-        'string-replace': {
-          inline: {
-            files: {
-              'assets/less/bootstrap/': 'assets/less/bootstrap/bootstrap.less',
-            },
-            options: {
-              replacements: [
-                // place files inline example
-                {
-                  pattern: '@import "',
-                  replacement: '@import "../vendors/bootstrap/less/'
-                }
-              ]
-            }
+        replace: {
+          another_example: {
+            src: ['assets/less/bootstrap/bootstrap.less'],
+            overwrite: true,                 // overwrite matched source files
+            replacements: [{
+              from: '@import "',
+              to: '@import "assets/vendors/bootstrap/less/'
+            }]
           }
         }
     });
 
     grunt.registerTask('default', ['less', 'watch']);
-    grunt.registerTask('first-build', ['copy', 'string-replace', 'less']);
+    grunt.registerTask('build', ['copy', 'replace', 'less']);
 };

@@ -11,7 +11,7 @@
     "grunt-contrib-less": "*",
     "grunt-contrib-watch": "*",
     "grunt-contrib-copy": "*",
-    "grunt-string-replace": "*",
+    "grunt-text-replace": "*",
     "matchdep": "*"
   },
   "localConfig": {
