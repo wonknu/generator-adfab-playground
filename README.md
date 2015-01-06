@@ -1,4 +1,5 @@
-# generator-adfab-playground [![Build Status](https://secure.travis-ci.org/wonknu/generator-adfab-playground.png?branch=master)](https://travis-ci.org/wonknu/generator-generator-adfab-playground)
+# generator-adfab-playground
+https://travis-ci.org/wonknu/generator-generator-adfab-playground)
 
 > [Yeoman](http://yeoman.io) generator
 
