@@ -1,6 +1,13 @@
 {
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {}
+  "name": "<%= site_name %>",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "1.*",
+    "bootstrap": "3.*",
+    "angular": ">=1 <1.3.0",
+    "angular-bootstrap": "*",
+    "angular-touch": "*",
+    "respond": "*"
+  },
+  "devDependencies": {}
 }
-

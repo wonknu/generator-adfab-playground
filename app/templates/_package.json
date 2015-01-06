@@ -1,5 +1,21 @@
 {
-  "name": "package",
+  "name": "<%= site_name %>",
   "version": "0.0.0",
-  "dependencies": {}
+  "description": "adfab project for <%= site_name %>",
+  "main": "Gruntfile.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-string-replace": "*",
+    "matchdep": "*"
+  },
+  "localConfig": {
+    "host": "",
+    "pathname": ""
+  }
 }

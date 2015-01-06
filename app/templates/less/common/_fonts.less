@@ -1,0 +1,14 @@
+@brand-font: 'brand-font-regular'; /// change to your font name
+@brand-regular: '@{brand-font}-regular';
+
+@font-face {
+  font-family: @brand-regular;
+  src: url('../../../../assets/fonts/@{brand-font}/@{brand-regular}.eot');
+  src: url('../../../../assets/fonts/@{brand-font}/@{brand-regular}.eot?#iefix') format('embedded-opentype'),
+       url('../../../../assets/fonts/@{brand-font}/@{brand-regular}.woff') format('woff'),
+       url('../../../../assets/fonts/@{brand-font}/@{brand-regular}.ttf') format('truetype'),
+       url('../../../../assets/fonts/@{brand-font}/@{brand-regular}.svg#brandbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
