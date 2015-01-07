@@ -21,11 +21,27 @@ var AdfabPlaygroundGenerator = yeoman.generators.Base.extend({
       name:     'themeName',
       message:  'What is your playground theme\'s name ?',
       default:  'starter'
+    },
+    {
+      name:     'dbName',
+      message:  'What is your database name ?'
+    },
+    {
+      name:     'userName',
+      message:  'What is your database username ?',
+      default:  'root'
+    },
+    {
+      name:     'pwd',
+      message:  'What is your database password ?'
     }];
 
     this.prompt(prompts, function (props) {
       this.appName = props.appName;
       this.themeName = props.themeName;
+      this.dbName = props.dbName;
+      this.userName = props.userName;
+      this.pwd = props.pwd;
       done();
     }.bind(this));
   },
@@ -39,7 +55,7 @@ var AdfabPlaygroundGenerator = yeoman.generators.Base.extend({
       "assets/images",
       "assets/css",
       "assets/css/fonts",
-      "assets/js",
+      "assets/scripts",
       "assets/less",
       "assets/less/common",
       "assets/less/layouts",
@@ -58,7 +74,10 @@ var AdfabPlaygroundGenerator = yeoman.generators.Base.extend({
   copyMainFiles: function(){
     var context = {
           site_name: this.appName,
-          theme_name: this.themeName
+          theme_name: this.themeName,
+          db_name: this.dbName,
+          db_user: this.userName,
+          db_pwd: this.pwd
         },
         lessFiles = [
           "common/_vars",
@@ -79,8 +98,8 @@ var AdfabPlaygroundGenerator = yeoman.generators.Base.extend({
     }.bind(this));
 
     // copy grunt & bower file
-    this.copy("_gruntfile.js", "Gruntfile.js");
     this.copy("._bowerrc", ".bowerrc");
+    this.template("_gruntfile.js", "Gruntfile.js", context);
 
     // copy & fill with the right appName npm & bower json file
     this.template("_package.json", "package.json", context);
@@ -88,6 +107,12 @@ var AdfabPlaygroundGenerator = yeoman.generators.Base.extend({
 
     // assetic config
     this.template("_assets.php", "assets.php", context);
+
+    // database config
+    this.template("_local.php", "../../../../config/autoload/local.php", context);
+
+    // Javascript assets
+    this.template("scripts/_app.js", "assets/scripts/app.js", context);
   },
 
   /**

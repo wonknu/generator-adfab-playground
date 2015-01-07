@@ -18,15 +18,15 @@ module.exports = function(grunt) {
                     spawn: false
                 },
                 files: {
-                    "assets/css/main.css": "assets/less/main.less"
+                    "assets/css/<%= theme_name %>.css": "assets/less/main.less"
                 }
             }
         },
         // running `grunt watch` will watch for changes
         watch: {
           less: {
-            files: 'src/**/*.less',
-            tasks: ['less' /*, "lesslint"*/],
+            files: 'assets/less/**/*.less',
+            tasks: ['less'],
             options: {
               livereload: true,
             }
@@ -50,12 +50,20 @@ module.exports = function(grunt) {
           },
         },
         replace: {
-          another_example: {
+          bootstrap: {
             src: ['assets/less/bootstrap/bootstrap.less'],
-            overwrite: true,                 // overwrite matched source files
+            overwrite: true,
             replacements: [{
               from: '@import "',
               to: '@import "assets/vendors/bootstrap/less/'
+            }]
+          },
+          angular: {
+            src: ['layout/layout.phtml'],
+            overwrite: true,
+            replacements: [{
+              from: '<body',
+              to: '<body ng-app="<%= site_name %>App"'
             }]
           }
         }

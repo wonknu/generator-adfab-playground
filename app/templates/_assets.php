@@ -45,18 +45,24 @@ return array(
               'output' => 'frontend',
             )
           ),
-          'frontend_css' => array(
+          'frontend_css_<%= theme_name %>' => array(
               'assets' => array(
               'css/<%= theme_name %>.css'
             ),
               'options' => array(
-              'output' => 'frontend/css/<%= theme_name %>'
+              'output' => 'frontend/css/main'
             )
           ),
 
           'head_<%= site_name %>_lib' => array(
             'assets' => array(
-              'vendors/jquery/dist/jquery.min.js',
+              'vendors/angular/angular.js',
+              'vendors/angular-bootstrap/ui-bootstrap.min.js',
+              'vendors/angular-bootstrap/ui-bootstrap-tpls.min.js',
+              'vendors/angular-touch/angular-touch.min.js',
+
+              // 'vendors/jquery/dist/jquery.min.js',
+
               'vendors/respond/dest/respond.min.js',
               //'vendors/bootstrap/js/alert.js',
               // 'vendors/bootstrap/js/button.js',
@@ -77,7 +83,7 @@ return array(
           ),
           'head_<%= site_name %>_js' => array(
             'assets' => array(
-              'js/main.js'
+              'scripts/app.js',
             ),
             'filters' => array(),
             'options' => array(
@@ -89,7 +95,7 @@ return array(
     ),
     'routes' => array(
       'frontend.*' => array(
-        '@frontend_css' => '@frontend_css',
+        '@frontend_css' => '@frontend_css_<%= theme_name %>',
         '@head_<%= site_name %>_lib' => '@head_<%= site_name %>_lib',
         '@head_<%= site_name %>_js' => '@head_<%= site_name %>_js',
       ),
