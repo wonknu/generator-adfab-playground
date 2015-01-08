@@ -99,9 +99,10 @@ var AdfabPlaygroundGenerator = yeoman.generators.Base.extend({
 
     // copy grunt & bower file
     this.copy("._bowerrc", ".bowerrc");
-    this.template("_gruntfile.js", "Gruntfile.js", context);
+    this.copy("._gitignore", ".gitignore");
 
-    // copy & fill with the right appName npm & bower json file
+    // copy & fill with the right appName npm / bower / grunt file
+    this.template("_gruntfile.js", "Gruntfile.js", context);
     this.template("_package.json", "package.json", context);
     this.template("_bower.json", "bower.json", context);
 
