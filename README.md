@@ -38,7 +38,7 @@ scripts/app.js
 ```
 Also the body tag will have ng-app attribut on it
 
-the generator will had bower to add:
+the generator use bower to add:
 - AngularJS (~1.2.21) & angular-bootstrap (~0.11.0) & angular-touch (~1.2.21)
 - jQuery (1.*)
 - bootstrap (3.*) & respond.js (for IE8 support)
@@ -115,6 +115,14 @@ after it end you can then:
 - run composer install
 - run install.sh
 - create your vhost and update your hosts file
+
+When you commit your frontend source generated with yeoman, remember to tell other people that work with you to run:
+
+```bash
+bower install
+npm install
+grunt
+```
 
 More :
 
